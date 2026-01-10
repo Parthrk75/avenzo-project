@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './Components/Navbar'
+import Header from './Components/Header'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+    <div className="relative min-h-screen">
+      {/* Background Image only for Navbar + Header */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72" // online image URL
+          alt="background"
+          className="h-full w-full object-cover"
+        />
+        {/* Optional: slight overlay for readability */}
+        {/* <div className="absolute inset-0 bg-black/20"></div> */}
+      </div>
 
-export default App;
+      {/* Page Content */}
+      <Navbar />
+      <Header />
+
+      {/* Any other sections below will appear without background image */}
+      <div className="relative z-0">
+        {/* Other page content here */}
+
+
+      </div>
+      
+
+    </div>
+      <Header />
+
+    </div>
+  )
+}
