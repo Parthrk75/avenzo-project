@@ -106,7 +106,7 @@ export default function Service() {
                   <p className="mt-6 text-lg text-gray-300">{openFeature.description}</p>
                   <div className="mt-8 flex items-center justify-center gap-x-6 lg:justify-start">
                     <a
-                      href="#"
+                      href=""
                       className="rounded-md bg-indigo-500 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-600 transition"
                     >
                       Get started
@@ -135,3 +135,8 @@ export default function Service() {
     </div>
   )
 }
+
+
+
+
+
