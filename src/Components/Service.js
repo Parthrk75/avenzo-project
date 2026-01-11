@@ -48,7 +48,6 @@ export default function Service() {
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8 items-start">
           
-          {/* Left column */}
           <div className="lg:pr-4">
             <h2 className="text-base font-semibold text-indigo-400">Our Services</h2>
             <p className="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight text-white lg:text-4xl">
