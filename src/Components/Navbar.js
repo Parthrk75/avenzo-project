@@ -1,11 +1,5 @@
-import { useEffect, useState } from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
-import {
-  Bars3Icon,
-  XMarkIcon,
-  SunIcon,
-  MoonIcon,
-} from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
@@ -19,60 +13,33 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(false)
-
-  /* 🔥 APPLY DARK MODE TO <html> */
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme === 'dark') {
-      setDarkMode(true)
-      document.documentElement.classList.add('dark')
-    }
-  }, [])
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
-  }, [darkMode])
-
   return (
-        <Disclosure as="nav" className="sticky top-0 z-50">
-
-      {/* CENTER NAVBAR */}
+    <Disclosure as="nav" className="sticky top-0 z-50">
+      {/* FULL WIDTH BAR (NO WHITE GAP) */}
       <div className="flex justify-center">
-
-        {/* 🌟 GLASS PILL NAVBAR */}
+        {/* 🌙 DARK GLASS PILL */}
         <div
           className="
             relative flex h-16 w-full max-w-5xl items-center justify-between
             rounded-full px-6
-            bg-white/70 backdrop-blur-xl shadow-lg
-            dark:bg-black/60
-            border border-indigo-500/20
+            bg-gray-900/70 backdrop-blur-xl
+            border border-white/10
+            shadow-lg shadow-black/20
           "
         >
-          {/* LEFT: Logo */}
+          {/* LOGO */}
           <div className="flex items-center gap-2">
             <img
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=400"
               alt="Logo"
               className="h-8 w-8"
             />
-          </div>
-
-          {/* CENTER: Company name (Mobile) */}
-          <div className="absolute left-1/2 -translate-x-1/2 sm:hidden">
-            <span className="text-lg font-semibold text-indigo-600 dark:text-indigo-400">
+            <span className="hidden sm:block text-lg font-semibold text-white">
               Avenzo
             </span>
           </div>
 
-          {/* CENTER: Menu (Desktop) */}
+          {/* DESKTOP MENU */}
           <div className="hidden sm:flex items-center gap-2">
             {navigation.map((item) => (
               <a
@@ -81,7 +48,7 @@ export default function Navbar() {
                 className={classNames(
                   item.current
                     ? 'bg-indigo-600 text-white'
-                    : 'text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/10 dark:hover:bg-indigo-500/20',
+                    : 'text-gray-300 hover:bg-white/10 hover:text-white',
                   'rounded-full px-4 py-2 text-sm font-medium transition'
                 )}
               >
@@ -90,38 +57,21 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* RIGHT: ACTIONS */}
-          <div className="flex items-center gap-1">
-            {/* 🌙 TOGGLE */}
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="rounded-full p-1 text-indigo-600 hover:bg-indigo-500/10 dark:text-indigo-400 dark:hover:bg-indigo-500/20 transition"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? (
-                <SunIcon className="h-5 w-5" />
-              ) : (
-                <MoonIcon className="h-5 w-5" />
-              )}
-            </button>
-
-            {/* ☰ MOBILE MENU */}
-            <DisclosureButton className="sm:hidden rounded-full p-1 text-indigo-600 hover:bg-indigo-500/10 dark:text-indigo-400 dark:hover:bg-indigo-500/20">
-              <Bars3Icon className="h-6 w-6 data-[open]:hidden" />
-              <XMarkIcon className="h-6 w-6 hidden data-[open]:block" />
-            </DisclosureButton>
-          </div>
+          {/* MOBILE BUTTON */}
+          <DisclosureButton className="sm:hidden rounded-full p-1 text-gray-300 hover:bg-white/10">
+            <Bars3Icon className="h-6 w-6 data-[open]:hidden" />
+            <XMarkIcon className="h-6 w-6 hidden data-[open]:block" />
+          </DisclosureButton>
         </div>
       </div>
 
-      {/* 📱 MOBILE MENU PANEL */}
+      {/* MOBILE MENU */}
       <DisclosurePanel className="sm:hidden mt-4 flex justify-center px-4">
         <div
           className="
             w-full max-w-5xl rounded-2xl p-4
-            bg-white/70 backdrop-blur-xl shadow-lg
-            dark:bg-black/60
-            border border-indigo-500/20
+            bg-gray-900/80 backdrop-blur-xl
+            border border-white/10
           "
         >
           <div className="flex flex-col gap-2">
@@ -132,8 +82,8 @@ export default function Navbar() {
                 className={classNames(
                   item.current
                     ? 'bg-indigo-600 text-white'
-                    : 'text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/10 dark:hover:bg-indigo-500/20',
-                  'rounded-full px-4 py-2 text-sm font-medium text-center'
+                    : 'text-gray-300 hover:bg-white/10 hover:text-white',
+                  'rounded-full px-4 py-2 text-sm font-medium text-center transition'
                 )}
               >
                 {item.name}

@@ -1,104 +1,68 @@
+const links = [
+  { name: 'Open roles', href: '#' },
+  { name: 'Internship program', href: '#' },
+  { name: 'Our values', href: '#' },
+  { name: 'Meet our leadership', href: '#' },
+]
+const stats = [
+  { name: 'Offices worldwide', value: '12' },
+  { name: 'Full-time colleagues', value: '300+' },
+  { name: 'Hours per week', value: '40' },
+  { name: 'Paid time off', value: 'Unlimited' },
+]
+
 export default function Header() {
   return (
-    <div className="relative overflow-hidden">
-
-      {/* CONTENT */}
-      <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-          {/* TEXT SECTION */}
-          <div className="sm:max-w-lg">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Building Smart Digital Solutions
-            </h1>
-            <p className="mt-4 text-xl text-gray-500">
-              We design and develop modern web apps, mobile solutions, AI-powered systems,
-              and secure smart technologies to power your business.
-            </p>
+    <div className="relative isolate overflow-hidden  py-24 sm:py-32">
+      
+      <div
+        aria-hidden="true"
+        className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+      >
+        <div
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+          }}
+          className="aspect-1097/845 w-274.25 bg-linear-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        className="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:-top-112 sm:ml-16 sm:translate-x-0"
+      >
+        <div
+          style={{
+            clipPath:
+              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+          }}
+          className="aspect-1097/845 w-274.25 bg-linear-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+        />
+      </div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:mx-0">
+          <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Work with us</h2>
+          <p className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
+            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+            fugiat veniam occaecat fugiat.
+          </p>
+        </div>
+        <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+            {links.map((link) => (
+              <a key={link.name} href={link.href}>
+                {link.name} <span aria-hidden="true">&rarr;</span>
+              </a>
+            ))}
           </div>
-
-          {/* IMAGE GRID */}
-          <div className="mt-10">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
-            >
-              <div className="absolute transform sm:top-0 sm:left-1/2 sm:translate-x-8 lg:top-1/2 lg:left-1/2 lg:translate-x-8 lg:-translate-y-1/2">
-                <div className="flex items-center space-x-6 lg:space-x-8">
-
-                  {/* COLUMN 1 */}
-                  <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                    <div className="h-64 w-44 overflow-hidden rounded-xl shadow-lg">
-                      <img
-                        alt="Web Development"
-                        src="https://images.unsplash.com/photo-1526378722484-bd91ca387e72"
-                        className="size-full object-cover"
-                      />
-                    </div>
-                    <div className="h-64 w-44 overflow-hidden rounded-xl shadow-lg">
-                      <img
-                        alt="App Development"
-                        src="https://images.unsplash.com/photo-1518770660439-4636190af475"
-                        className="size-full object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  {/* COLUMN 2 */}
-                  <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                    <div className="h-64 w-44 overflow-hidden rounded-xl shadow-lg">
-                      <img
-                        alt="AI Technology"
-                        src="https://images.unsplash.com/photo-1677442136019-21780ecad995"
-                        className="size-full object-cover"
-                      />
-                    </div>
-                    <div className="h-64 w-44 overflow-hidden rounded-xl shadow-lg">
-                      <img
-                        alt="Cloud Computing"
-                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-                        className="size-full object-cover"
-                      />
-                    </div>
-                    <div className="h-64 w-44 overflow-hidden rounded-xl shadow-lg">
-                      <img
-                        alt="System Architecture"
-                        src="https://images.unsplash.com/photo-1555949963-aa79dcee981c"
-                        className="size-full object-cover"
-                      />
-                    </div>
-                  </div>
-
-                  {/* COLUMN 3 */}
-                  <div className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                    <div className="h-64 w-44 overflow-hidden rounded-xl shadow-lg">
-                      <img
-                        alt="Cyber Security"
-                        src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87"
-                        className="size-full object-cover"
-                      />
-                    </div>
-                    <div className="h-64 w-44 overflow-hidden rounded-xl shadow-lg">
-                      <img
-                        alt="Smart Systems"
-                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-                        className="size-full object-cover"
-                      />
-                    </div>
-                  </div>
-
-                </div>
+          <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.name} className="flex flex-col-reverse gap-1">
+                <dt className="text-base/7 text-gray-300">{stat.name}</dt>
+                <dd className="text-4xl font-semibold tracking-tight text-white">{stat.value}</dd>
               </div>
-            </div>
-
-            {/* CTA BUTTON */}
-            <a
-              href="#"
-              className="inline-block rounded-md bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700 transition"
-            >
-              Explore Solutions
-            </a>
-          </div>
+            ))}
+          </dl>
         </div>
       </div>
     </div>
